@@ -6,7 +6,7 @@ class Block {
   public previousHash: string;
   public hash: string;
 
-  constructor(private data: any) {
+  constructor(public data: any) {
     this.timestamp = Date.now();
     this.previousHash = null;
     this.hash = this.calculateHash();

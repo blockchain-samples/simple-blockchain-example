@@ -117,6 +117,8 @@ var myNewBlockchain = new Blockchain();
 myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ amount: 55 }));
 myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ amount: 41 }));
 myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ amount: 17 }));
+myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ amount: 22 }));
+myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ amount: 63 }));
 // -- print out our blockchain
 console.log(JSON.stringify(myNewBlockchain.chain, null, 2));
 // -- check if blockchain is valid

@@ -43,6 +43,8 @@ const myNewBlockchain = new Blockchain();
 myNewBlockchain.addBlock(new Block({amount: 55}));
 myNewBlockchain.addBlock(new Block({amount: 41}));
 myNewBlockchain.addBlock(new Block({amount: 17}));
+myNewBlockchain.addBlock(new Block({amount: 22}));
+myNewBlockchain.addBlock(new Block({amount: 63}));
 
 // -- print out our blockchain
 console.log(JSON.stringify(myNewBlockchain.chain, null, 2));
