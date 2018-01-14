@@ -1,0 +1,21 @@
+{
+  "name": "simple-blockchain-example",
+  "version": "1.0.0",
+  "description": "A simple example of writing a blockchain.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "node ./dist/blockchain.js"
+  },
+  "author": "Milos Tomsik",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "@types/crypto-js": "^3.1.38",
+    "crypto-js": "^3.1.9-1"
+  }
+}
