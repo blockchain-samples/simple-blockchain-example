@@ -3440,7 +3440,7 @@ var Blockchain = /** @class */ (function () {
     };
     Object.defineProperty(Blockchain.prototype, "isValid", {
         get: function () {
-            // skipping the InitialBlock because it doesn't have a previous block
+            // -- skipping the InitialBlock because it doesn't have a previous block
             for (var i = 1; i < this.chain.length; i++) {
                 var previousBlock = this.chain[i - 1];
                 var currentBlock = this.chain[i];
@@ -3484,9 +3484,10 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 
 var SHA256 = __WEBPACK_IMPORTED_MODULE_0_crypto_js__["SHA256"];
 function startsWithNCharacters(hash, n, hexChar) {
-    var nZeros = Array(n + 1).join(hexChar);
-    return hash.substring(0, n) === nZeros;
+    var nChars = Array(n + 1).join(hexChar);
+    return hash.substring(0, n) === nChars;
 }
+// -- define our block
 var Block = /** @class */ (function () {
     function Block(data) {
         this.data = data;
@@ -3503,8 +3504,10 @@ var Block = /** @class */ (function () {
             this.previousHash +
             this.nonce).toString();
     };
+    // -- mines the block with given difficulty, checking if the hash starts
+    // -- with N amount of '0' characters, you can use any hex char
     Block.prototype.mine = function (difficulty) {
-        while (!startsWithNCharacters(this.hash, difficulty, '7')) {
+        while (!startsWithNCharacters(this.hash, difficulty, '0')) {
             this.nonce++;
             this.hash = this.calculateHash();
             console.log(this.hash);

@@ -23,7 +23,7 @@ class Blockchain {
   }
 
   get isValid(): boolean {
-    // skipping the InitialBlock because it doesn't have a previous block
+    // -- skipping the InitialBlock because it doesn't have a previous block
     for (let i = 1; i < this.chain.length; i++) {
       const previousBlock = this.chain[i - 1];
       const currentBlock = this.chain[i];
