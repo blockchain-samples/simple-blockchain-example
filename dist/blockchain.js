@@ -60,77 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__block__ = __webpack_require__(11);
-// -- import our block class
-
-// -- initialize a starter (genesis) block
-var InitialBlock = new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */](null);
-// -- define a blockchain class with an initial starter block
-var Blockchain = /** @class */ (function () {
-    function Blockchain(chain) {
-        if (chain === void 0) { chain = [InitialBlock]; }
-        this.chain = chain;
-    }
-    Object.defineProperty(Blockchain.prototype, "latestBlock", {
-        get: function () {
-            return this.chain[this.chain.length - 1];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Blockchain.prototype.addBlock = function (block) {
-        block.previousHash = this.latestBlock.hash;
-        block.hash = block.calculateHash();
-        this.chain.push(block);
-    };
-    Object.defineProperty(Blockchain.prototype, "isValid", {
-        get: function () {
-            for (var i = 1; i < this.chain.length; i++) {
-                var previousBlock = this.chain[i - 1];
-                var currentBlock = this.chain[i];
-                if (currentBlock.previousHash !== previousBlock.hash) {
-                    return false;
-                }
-                if (currentBlock.hash !== currentBlock.calculateHash()) {
-                    return false;
-                }
-            }
-            return true;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return Blockchain;
-}());
-// -- create a new instance of our blockchain class
-var myNewBlockchain = new Blockchain();
-// adding new blocks
-myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ amount: 55 }));
-myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ amount: 41 }));
-myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ amount: 17 }));
-myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ amount: 22 }));
-myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ amount: 63 }));
-// -- print out our blockchain
-console.log(JSON.stringify(myNewBlockchain.chain, null, 2));
-// -- check if blockchain is valid
-console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
-// -- try to make change in our blockchain
-myNewBlockchain.chain[1].timestamp = Date.now();
-// -- check if blockchain is valid again
-console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
-
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
@@ -895,13 +829,13 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 }));
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(3));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(2));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -1780,13 +1714,13 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 }));
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(7), __webpack_require__(8));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(6), __webpack_require__(7));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -1917,13 +1851,13 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 }));
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1));
+		module.exports = exports = factory(__webpack_require__(0));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -2057,13 +1991,13 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 }));
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1));
+		module.exports = exports = factory(__webpack_require__(0));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -2330,13 +2264,13 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 }));
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1));
+		module.exports = exports = factory(__webpack_require__(0));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -2639,13 +2573,13 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 }));
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1));
+		module.exports = exports = factory(__webpack_require__(0));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -2794,13 +2728,13 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 }));
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1));
+		module.exports = exports = factory(__webpack_require__(0));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -2942,13 +2876,13 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 }));
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1));
+		module.exports = exports = factory(__webpack_require__(0));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -3146,13 +3080,13 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 }));
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(6));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(5));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -3474,6 +3408,73 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 }));
 
 /***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__block__ = __webpack_require__(11);
+// -- import our block class
+
+// -- initialize a starter block
+var InitialBlock = new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */](null);
+// -- define a blockchain class with an initial, starter block
+var Blockchain = /** @class */ (function () {
+    function Blockchain(chain) {
+        if (chain === void 0) { chain = [InitialBlock]; }
+        this.chain = chain;
+        this.difficulty = 3;
+    }
+    Object.defineProperty(Blockchain.prototype, "lastBlock", {
+        get: function () {
+            return this.chain[this.chain.length - 1];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Blockchain.prototype.addBlock = function (block) {
+        block.index = this.chain.length;
+        block.previousHash = this.lastBlock.hash;
+        block.mine(this.difficulty);
+        this.chain.push(block);
+    };
+    Object.defineProperty(Blockchain.prototype, "isValid", {
+        get: function () {
+            // skipping the InitialBlock because it doesn't have a previous block
+            for (var i = 1; i < this.chain.length; i++) {
+                var previousBlock = this.chain[i - 1];
+                var currentBlock = this.chain[i];
+                if (currentBlock.previousHash !== previousBlock.hash) {
+                    return false;
+                }
+                if (currentBlock.hash !== currentBlock.calculateHash()) {
+                    return false;
+                }
+            }
+            return true;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Blockchain;
+}());
+// -- create a new instance of our blockchain class
+var myNewBlockchain = new Blockchain();
+// add new blocks
+myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ url: 'www.google.com' }));
+myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ url: 'www.facebook.com' }));
+myNewBlockchain.addBlock(new __WEBPACK_IMPORTED_MODULE_0__block__["a" /* default */]({ url: 'www.twitter.com' }));
+// -- print out our blockchain
+console.log(JSON.stringify(myNewBlockchain.chain, null, 2));
+// -- check if blockchain is valid
+console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
+// -- try to make change in our blockchain
+myNewBlockchain.chain[1].data = { url: 'www.linkedin.com' };
+// -- check if blockchain is valid again
+console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
+
+
+/***/ }),
 /* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3482,17 +3483,33 @@ console.log('Is given blockchain valid? ' + myNewBlockchain.isValid);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_crypto_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_crypto_js__);
 
 var SHA256 = __WEBPACK_IMPORTED_MODULE_0_crypto_js__["SHA256"];
+function startsWithNCharacters(hash, n, hexChar) {
+    var nZeros = Array(n + 1).join(hexChar);
+    return hash.substring(0, n) === nZeros;
+}
 var Block = /** @class */ (function () {
     function Block(data) {
         this.data = data;
+        this.nonce = 0;
+        this.index = 0;
         this.timestamp = Date.now();
         this.previousHash = null;
         this.hash = this.calculateHash();
     }
     Block.prototype.calculateHash = function () {
-        return SHA256(this.timestamp +
+        return SHA256(this.index +
+            this.timestamp +
             JSON.stringify(this.data) +
-            this.previousHash).toString();
+            this.previousHash +
+            this.nonce).toString();
+    };
+    Block.prototype.mine = function (difficulty) {
+        while (!startsWithNCharacters(this.hash, difficulty, '7')) {
+            this.nonce++;
+            this.hash = this.calculateHash();
+            console.log(this.hash);
+        }
+        return this.hash;
     };
     return Block;
 }());
@@ -3506,7 +3523,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(6), __webpack_require__(13), __webpack_require__(14), __webpack_require__(4), __webpack_require__(5), __webpack_require__(7), __webpack_require__(9), __webpack_require__(15), __webpack_require__(10), __webpack_require__(16), __webpack_require__(17), __webpack_require__(18), __webpack_require__(8), __webpack_require__(19), __webpack_require__(3), __webpack_require__(2), __webpack_require__(20), __webpack_require__(21), __webpack_require__(22), __webpack_require__(23), __webpack_require__(24), __webpack_require__(25), __webpack_require__(26), __webpack_require__(27), __webpack_require__(28), __webpack_require__(29), __webpack_require__(30), __webpack_require__(31), __webpack_require__(32), __webpack_require__(33), __webpack_require__(34), __webpack_require__(35));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(5), __webpack_require__(13), __webpack_require__(14), __webpack_require__(3), __webpack_require__(4), __webpack_require__(6), __webpack_require__(8), __webpack_require__(15), __webpack_require__(9), __webpack_require__(16), __webpack_require__(17), __webpack_require__(18), __webpack_require__(7), __webpack_require__(19), __webpack_require__(2), __webpack_require__(1), __webpack_require__(20), __webpack_require__(21), __webpack_require__(22), __webpack_require__(23), __webpack_require__(24), __webpack_require__(25), __webpack_require__(26), __webpack_require__(27), __webpack_require__(28), __webpack_require__(29), __webpack_require__(30), __webpack_require__(31), __webpack_require__(32), __webpack_require__(33), __webpack_require__(34), __webpack_require__(35));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -3529,7 +3546,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1));
+		module.exports = exports = factory(__webpack_require__(0));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -3610,7 +3627,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1));
+		module.exports = exports = factory(__webpack_require__(0));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -3764,7 +3781,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(9));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(8));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -3849,7 +3866,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(6), __webpack_require__(10));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(5), __webpack_require__(9));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -3937,7 +3954,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(6));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(5));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -4265,7 +4282,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1));
+		module.exports = exports = factory(__webpack_require__(0));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -4537,7 +4554,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(7), __webpack_require__(8));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(6), __webpack_require__(7));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -4687,7 +4704,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -4770,7 +4787,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -4833,7 +4850,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -4954,7 +4971,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -5013,7 +5030,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -5058,7 +5075,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -5112,7 +5129,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -5161,7 +5178,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -5206,7 +5223,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -5256,7 +5273,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -5291,7 +5308,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -5362,7 +5379,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(4), __webpack_require__(5), __webpack_require__(3), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(3), __webpack_require__(4), __webpack_require__(2), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -5599,7 +5616,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(4), __webpack_require__(5), __webpack_require__(3), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(3), __webpack_require__(4), __webpack_require__(2), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -6374,7 +6391,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(4), __webpack_require__(5), __webpack_require__(3), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(3), __webpack_require__(4), __webpack_require__(2), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -6518,7 +6535,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(4), __webpack_require__(5), __webpack_require__(3), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(3), __webpack_require__(4), __webpack_require__(2), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -6715,7 +6732,7 @@ var Block = /** @class */ (function () {
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(4), __webpack_require__(5), __webpack_require__(3), __webpack_require__(2));
+		module.exports = exports = factory(__webpack_require__(0), __webpack_require__(3), __webpack_require__(4), __webpack_require__(2), __webpack_require__(1));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD

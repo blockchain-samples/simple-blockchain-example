@@ -4,7 +4,7 @@
   "description": "A simple example of writing a blockchain.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "compile": "webpack",
     "start": "node ./dist/blockchain.js"
   },
   "author": "Milos Tomsik",
